@@ -37,6 +37,6 @@ class User < ActiveRecord::Base
   	# Defines a proto-feed.
   	# See "Following users" for the full implementation.
   	def feed
-  		Entries.where("user_id = ?", id)
+  		Entry.where("user_id = ?", id)
   	end
   end

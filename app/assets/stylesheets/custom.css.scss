@@ -277,7 +277,7 @@ margin-top: 5px;
 }
 .comments{
 display: block;
-margin-left: 65px
+margin-left: 65px;
 }
 }
 
@@ -294,7 +294,8 @@ input {
 border: 0;
 }
 }
-home-no-sign-in {
-	text-align: center;
-	border: 3px solid green;
+.home-no-sign-in {
+	margin: auto;
+    width: 50%;
+    padding: 10px;
 }

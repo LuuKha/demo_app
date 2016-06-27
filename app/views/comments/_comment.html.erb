@@ -1,13 +1,12 @@
 <div class="row a_comment " id="comment_<%comment.id%>" >
   <div class="">
     <span class="col-md-1">
-     <%= link_to gravatar_for(comment.user, size: 20), comment.user %>
+     <%= link_to gravatar_for(comment.user, size: 30), comment.user %>
     </span>
-      <span class="col-md-2"><b><%= link_to comment.user.name, comment.user %></b></span>
-      <span class="col-md-9">
-        <span class="col-md-9"><%= comment.content %></span>
+      <span class="col-md-10"><b><%= link_to comment.user.name, comment.user %></b>
+      <%= comment.content %></span>
         <span class="col-md-9"><span class="timestampComment"><%= time_ago_in_words(comment.created_at) %> ago</span></span>
-      </span>	    
+         
   </div>
   </div>
   

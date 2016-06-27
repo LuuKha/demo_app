@@ -1,6 +1,10 @@
 
 <%= form_for(@entry) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+  <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title ,:class=>"form-control"%>
+    </div>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new entry..." ,class:"form-control"%>
   </div>

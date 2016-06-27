@@ -21,7 +21,7 @@ before_action :correct_user,   only: :destroy
   private
 
     def entry_params
-      params.require(:entry).permit(:content)
+      params.require(:micropost).permit(:content,:title,:category)
     end
     def correct_user
       @entry = current_user.entries.find_by(id: params[:id])

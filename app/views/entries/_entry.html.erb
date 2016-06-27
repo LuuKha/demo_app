@@ -5,9 +5,27 @@
   <span class="content"><b>Content:</b> <%= entry.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(entry.created_at) %> ago.
-        <% if current_user?(entry.user) %>
-      <%= link_to "delete", entry, method: :delete,
-                                       data: { confirm: "You sure?" } %>
+    <% if current_user?(entry.user) %>
+    <%= link_to "delete", entry, method: :delete,
+    data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <div class= "comments">
+    <div id="comments_<%= entry.id %>">
+      <% if entry.comments.any? %>
+      <%= render entry.comments,entry: entry %>
+      <%end%>
+    </div>  
+    <%= render 'shared/comment_form', entry: entry %> 
+    <% if (logged_in? && (current_user.following?(entry.user) || current_user?(entry.user))) %> 
+           <script type="text/javascript">
+             $(".comment-form").show();
+           </script>
+        <% else %>
+        <script type="text/javascript">
+             $(".comment-form").hide();
+           </script>
+        <%end%> 
+
+  </div>
 </li>
